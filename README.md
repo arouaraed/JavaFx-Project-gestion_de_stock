@@ -1,4 +1,4 @@
-# 📦 Système de Gestion de Stock pour mon universite
+# 📦 Système de Gestion de Stock pour mon université
 
 Application JavaFX pour la gestion de stock et d'inventaire des établissements universitaires.
 
