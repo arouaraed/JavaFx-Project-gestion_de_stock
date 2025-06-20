@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15.0" style="-fx-background-color: #f0f2f5;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestion.controller.CommandeExterneController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <!-- Search Section -->
+        <StackPane style="-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+            <padding>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </padding>
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="15.0">
+                    <children>
+                        <Label style="-fx-text-fill: #4834d4; -fx-font-weight: bold;" text="Rechercher:">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="searchField" prefHeight="35.0" prefWidth="200.0" promptText="Référence" style="-fx-background-radius: 4; -fx-border-color: #e0e0e0; -fx-border-radius: 4;" />
+                        <Label style="-fx-text-fill: #4834d4; -fx-font-weight: bold;" text="Statut:">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="statutFilterComboBox" prefHeight="35.0" prefWidth="150.0" style="-fx-background-radius: 4;" />
+                        <Label style="-fx-text-fill: #4834d4; -fx-font-weight: bold;" text="Fournisseur:">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="fournisseurFilterComboBox" prefHeight="35.0" prefWidth="200.0" style="-fx-background-radius: 4;" />
+                        <Button mnemonicParsing="false" onAction="#handleRechercher" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #6c5ce7; -fx-text-fill: white; -fx-background-radius: 4;" text="Rechercher" />
+                    </children>
+                </HBox>
+            </children>
+        </StackPane>
+
+        <!-- Table Section -->
+        <StackPane style="-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+            <padding>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </padding>
+            <children>
+                <VBox spacing="10.0">
+                    <children>
+                        <Label style="-fx-text-fill: #4834d4; -fx-font-weight: bold;" text="Liste des commandes externes">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <TableView fx:id="commandeTable" minHeight="-Infinity" minWidth="-Infinity" prefHeight="99.0" prefWidth="1050.0" style="-fx-background-radius: 4; -fx-border-color: #e0e0e0; -fx-border-radius: 4;">
+                            <columns>
+                                <TableColumn fx:id="referenceColumn" prefWidth="120.0" text="Référence" />
+                                <TableColumn fx:id="dateCommandeColumn" prefWidth="120.0" text="Date" />
+                                <TableColumn fx:id="fournisseurColumn" prefWidth="200.0" text="Fournisseur" />
+                                <TableColumn fx:id="statutColumn" prefWidth="120.0" text="Statut" />
+                                <TableColumn fx:id="totalColumn" prefWidth="120.0" text="Total" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+            </children>
+        </StackPane>
+
+        <!-- Details Section -->
+        <StackPane style="-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+            <padding>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </padding>
+            <children>
+                <VBox prefHeight="123.0" prefWidth="1012.0" spacing="15.0">
+                    <children>
+                        <Label style="-fx-text-fill: #4834d4; -fx-font-weight: bold;" text="Détails de la commande">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <HBox spacing="15.0">
+                            <children>
+                                <VBox spacing="8.0">
+                                    <children>
+                                        <Label style="-fx-text-fill: #636e72; -fx-font-weight: bold;" text="Référence">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="referenceField" prefHeight="35.0" style="-fx-background-radius: 4; -fx-border-color: #e0e0e0; -fx-border-radius: 4;" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="8.0">
+                                    <children>
+                                        <Label style="-fx-text-fill: #636e72; -fx-font-weight: bold;" text="Date de commande">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <DatePicker fx:id="dateCommandePicker" prefHeight="35.0" style="-fx-background-radius: 4;" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="8.0">
+                                    <children>
+                                        <Label style="-fx-text-fill: #636e72; -fx-font-weight: bold;" text="Fournisseur">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <ComboBox fx:id="fournisseurComboBox" prefHeight="35.0" prefWidth="200.0" style="-fx-background-radius: 4;" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="8.0">
+                                    <children>
+                                        <Label style="-fx-text-fill: #636e72; -fx-font-weight: bold;" text="Statut">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <ComboBox fx:id="statutComboBox" prefHeight="35.0" prefWidth="150.0" style="-fx-background-radius: 4;" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#handleNouveau" prefHeight="35.0" style="-fx-background-color: #00b894; -fx-text-fill: white; -fx-background-radius: 4;" text="Nouvelle commande" />
+                                <Button mnemonicParsing="false" onAction="#handleEnregistrer" prefHeight="35.0" style="-fx-background-color: #0984e3; -fx-text-fill: white; -fx-background-radius: 4;" text="Enregistrer" />
+                                <Button mnemonicParsing="false" onAction="#handleSupprimer" prefHeight="35.0" style="-fx-background-color: #e84393; -fx-text-fill: white; -fx-background-radius: 4;" text="Supprimer" />
+                                <Button mnemonicParsing="false" onAction="#handleExportPDF" prefHeight="35.0" style="-fx-background-color: #6c5ce7; -fx-text-fill: white; -fx-background-radius: 4;" text="Exporter PDF" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </StackPane>
+
+        <!-- Order Lines Section -->
+        <StackPane style="-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+            <padding>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </padding>
+            <children>
+                <VBox prefHeight="295.0" prefWidth="1007.0" spacing="15.0">
+                    <children>
+                        <Label style="-fx-text-fill: #4834d4; -fx-font-weight: bold;" text="Lignes de commande">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <TableView fx:id="ligneCommandeTable" minHeight="-Infinity" minWidth="-Infinity" prefHeight="117.0" prefWidth="1001.0" style="-fx-background-radius: 4; -fx-border-color: #e0e0e0; -fx-border-radius: 4;">
+                            <columns>
+                                <TableColumn fx:id="produitColumn" prefWidth="250.0" text="Produit" />
+                                <TableColumn fx:id="quantiteColumn" prefWidth="100.0" text="Quantité" />
+                                <TableColumn fx:id="prixUnitaireColumn" prefWidth="120.0" text="Prix unitaire" />
+                                <TableColumn fx:id="sousTotal" prefWidth="120.0" text="Sous-total" />
+                            </columns>
+                        </TableView>
+                        <HBox spacing="15.0">
+                            <children>
+                                <VBox spacing="8.0">
+                                    <children>
+                                        <Label style="-fx-text-fill: #636e72; -fx-font-weight: bold;" text="Produit">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <ComboBox fx:id="produitComboBox" prefHeight="35.0" prefWidth="250.0" style="-fx-background-radius: 4;" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="8.0">
+                                    <children>
+                                        <Label style="-fx-text-fill: #636e72; -fx-font-weight: bold;" text="Quantité">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="quantiteField" prefHeight="35.0" prefWidth="100.0" style="-fx-background-radius: 4; -fx-border-color: #e0e0e0; -fx-border-radius: 4;" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="8.0">
+                                    <children>
+                                        <Label style="-fx-text-fill: #636e72; -fx-font-weight: bold;" text="Prix unitaire">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="prixUnitaireField" prefHeight="35.0" prefWidth="120.0" style="-fx-background-radius: 4; -fx-border-color: #e0e0e0; -fx-border-radius: 4;" />
+                                    </children>
+                                </VBox>
+                                <VBox alignment="BOTTOM_LEFT" spacing="8.0">
+                                    <children>
+                                        <Button mnemonicParsing="false" onAction="#handleAjouterLigne" prefHeight="35.0" style="-fx-background-color: #00b894; -fx-text-fill: white; -fx-background-radius: 4;" text="Ajouter ligne" />
+                                    </children>
+                                </VBox>
+                                <VBox alignment="BOTTOM_LEFT" spacing="8.0">
+                                    <children>
+                                        <Button mnemonicParsing="false" onAction="#handleSupprimerLigne" prefHeight="35.0" style="-fx-background-color: #e84393; -fx-text-fill: white; -fx-background-radius: 4;" text="Supprimer ligne" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                            <children>
+                                <Label style="-fx-text-fill: #636e72; -fx-font-weight: bold;" text="Total de la commande:">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="totalLabel" style="-fx-text-fill: #4834d4;" text="0.00 TND">
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <Button mnemonicParsing="false" onAction="#handleValiderCommande" prefHeight="35.0" style="-fx-background-color: #0984e3; -fx-text-fill: white; -fx-background-radius: 4;" text="Valider la commande" />
+                                <Button mnemonicParsing="false" onAction="#handleReceptionner" prefHeight="35.0" style="-fx-background-color: #6c5ce7; -fx-text-fill: white; -fx-background-radius: 4;" text="Réceptionner" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" spacing="10.0" />
+                    </children>
+                </VBox>
+            </children>
+        </StackPane>
+    </children>
+</VBox>

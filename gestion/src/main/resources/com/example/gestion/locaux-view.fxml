@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15.0" style="-fx-background-color: #f0f2f5;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestion.controller.LocalController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <!-- Search Section -->
+        <StackPane style="-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+            <padding>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </padding>
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="15.0">
+                    <children>
+                        <Label style="-fx-text-fill: #4834d4; -fx-font-weight: bold;" text="Rechercher:">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="searchField" prefHeight="35.0" prefWidth="300.0" promptText="Code ou désignation" style="-fx-background-radius: 4; -fx-border-color: #e0e0e0; -fx-border-radius: 4;" />
+                        <HBox alignment="CENTER_RIGHT" spacing="10.0" HBox.hgrow="ALWAYS" />
+                    </children>
+                </HBox>
+            </children>
+        </StackPane>
+
+        <!-- Table Section -->
+        <StackPane style="-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </padding>
+            <children>
+                <VBox spacing="10.0">
+                    <children>
+                        <Label style="-fx-text-fill: #4834d4; -fx-font-weight: bold;" text="Liste des locaux">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <TableView fx:id="localTable" prefHeight="300.0" prefWidth="800.0" style="-fx-background-radius: 4; -fx-border-color: #e0e0e0; -fx-border-radius: 4;">
+                            <columns>
+                                <TableColumn fx:id="codeColumn" prefWidth="100.0" text="Code" />
+                                <TableColumn fx:id="designationColumn" prefWidth="300.0" text="Désignation" />
+                                <TableColumn fx:id="typeColumn" prefWidth="150.0" text="Type" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+            </children>
+        </StackPane>
+
+        <!-- Details Section -->
+        <StackPane style="-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+            <padding>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </padding>
+            <children>
+                <VBox spacing="15.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT">
+                            <children>
+                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6c5ce7" height="5.0" width="40.0" />
+                                <Label style="-fx-text-fill: #4834d4; -fx-font-weight: bold; -fx-padding: 0 0 0 10;" text="Détails du local">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+
+                        <HBox spacing="15.0">
+                            <children>
+                                <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label style="-fx-text-fill: #636e72; -fx-font-weight: bold;" text="Code">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="codeField" prefHeight="35.0" style="-fx-background-radius: 4; -fx-border-color: #e0e0e0; -fx-border-radius: 4;" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label style="-fx-text-fill: #636e72; -fx-font-weight: bold;" text="Désignation">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="designationField" prefHeight="35.0" style="-fx-background-radius: 4; -fx-border-color: #e0e0e0; -fx-border-radius: 4;" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="8.0">
+                                    <children>
+                                        <Label style="-fx-text-fill: #636e72; -fx-font-weight: bold;" text="Type">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <ComboBox fx:id="typeComboBox" prefHeight="35.0" prefWidth="150.0" style="-fx-background-radius: 4;" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+
+                        <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#handleAjouter" prefHeight="35.0" style="-fx-background-color: #00b894; -fx-text-fill: white; -fx-background-radius: 4;" text="Ajouter">
+                                    <font>
+                                        <Font size="12.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="7.0" left="15.0" right="15.0" top="7.0" />
+                                    </padding>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#handleModifier" prefHeight="35.0" style="-fx-background-color: #0984e3; -fx-text-fill: white; -fx-background-radius: 4;" text="Modifier">
+                                    <font>
+                                        <Font size="12.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="7.0" left="15.0" right="15.0" top="7.0" />
+                                    </padding>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#handleSupprimer" prefHeight="35.0" style="-fx-background-color: #e84393; -fx-text-fill: white; -fx-background-radius: 4;" text="Supprimer">
+                                    <font>
+                                        <Font size="12.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="7.0" left="15.0" right="15.0" top="7.0" />
+                                    </padding>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </StackPane>
+    </children>
+</VBox>

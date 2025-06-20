@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane style="-fx-background-color: #f0f2f5;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestion.controller.LoginController">
+    <center>
+        <StackPane>
+            <children>
+                <VBox alignment="CENTER" maxHeight="500" maxWidth="400" spacing="20.0" style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0); -fx-background-radius: 8;">
+                    <padding>
+                        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                    </padding>
+                    <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6c5ce7" height="5.0" width="60.0" />
+                        <Label style="-fx-text-fill: #4834d4;" text="ISIMM" textAlignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Label style="-fx-text-fill: #4834d4;" text="Gestion de Stock" textAlignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="26.0" />
+                            </font>
+                        </Label>
+
+                        <VBox spacing="8" style="-fx-padding: 20 0 0 0;">
+                            <Label style="-fx-text-fill: #636e72; -fx-font-weight: bold;" text="Nom d'utilisateur">
+                                <font>
+                                    <Font size="13.0" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="usernameField" prefHeight="40.0" promptText="Entrez votre nom d'utilisateur" style="-fx-background-radius: 4; -fx-border-color: #e0e0e0; -fx-border-radius: 4; -fx-padding: 8 12;">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </TextField>
+                        </VBox>
+
+                        <VBox spacing="8">
+                            <Label style="-fx-text-fill: #636e72; -fx-font-weight: bold;" text="Mot de passe">
+                                <font>
+                                    <Font size="13.0" />
+                                </font>
+                            </Label>
+                            <PasswordField fx:id="passwordField" prefHeight="40.0" promptText="Entrez votre mot de passe" style="-fx-background-radius: 4; -fx-border-color: #e0e0e0; -fx-border-radius: 4; -fx-padding: 8 12;">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </PasswordField>
+                        </VBox>
+
+                        <Button maxWidth="Infinity" onAction="#handleLogin" prefHeight="45.0" style="-fx-background-color: #6c5ce7; -fx-text-fill: white; -fx-background-radius: 4; -fx-cursor: hand;" text="Se connecter">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                        </Button>
+
+                        <HBox alignment="CENTER" style="-fx-padding: 10 0 0 0;">
+                            <Label style="-fx-text-fill: #636e72;" text="© 2025 ISIMM - Système de Gestion de Stock">
+                                <font>
+                                    <Font size="12.0" />
+                                </font>
+                            </Label>
+                        </HBox>
+                  <Label style="-fx-text-fill: #636e72;" text="Développé par Raed Aroua">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                    </children>
+                </VBox>
+            </children>
+        </StackPane>
+    </center>
+</BorderPane>

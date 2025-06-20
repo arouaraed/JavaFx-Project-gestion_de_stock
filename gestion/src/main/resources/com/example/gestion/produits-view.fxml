@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15.0" style="-fx-background-color: #f0f2f5;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestion.controller.ProduitController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <!-- Search Section -->
+        <StackPane style="-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+            <padding>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </padding>
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="15.0">
+                    <children>
+                        <Label style="-fx-text-fill: #4834d4; -fx-font-weight: bold;" text="Rechercher:">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="searchField" prefHeight="35.0" prefWidth="300.0" promptText="Référence ou désignation" style="-fx-background-radius: 4; -fx-border-color: #e0e0e0; -fx-border-radius: 4;" />
+                        <HBox alignment="CENTER_RIGHT" spacing="10.0" HBox.hgrow="ALWAYS" />
+                    </children>
+                </HBox>
+            </children>
+        </StackPane>
+
+        <!-- Product Table Section -->
+        <StackPane style="-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </padding>
+            <children>
+                <VBox spacing="10.0">
+                    <children>
+                        <Label style="-fx-text-fill: #4834d4; -fx-font-weight: bold;" text="Liste des produits">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <TableView fx:id="produitTable" prefHeight="255.0" prefWidth="826.0" style="-fx-background-radius: 4; -fx-border-color: #e0e0e0; -fx-border-radius: 4;">
+                            <columns>
+                                <TableColumn fx:id="referenceColumn" prefWidth="100.0" text="Référence" />
+                                <TableColumn fx:id="designationColumn" prefWidth="200.0" text="Désignation" />
+                                <TableColumn fx:id="typeColumn" prefWidth="100.0" text="Type" />
+                                <TableColumn fx:id="categorieColumn" prefWidth="100.0" text="Catégorie" />
+                                <TableColumn fx:id="quantiteColumn" prefWidth="75.0" text="Quantité" />
+                                <TableColumn fx:id="stockMinimalColumn" prefWidth="100.0" text="Stock Min" />
+                                <TableColumn fx:id="datePeremptionColumn" prefWidth="125.0" text="Date Péremption" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+            </children>
+        </StackPane>
+
+        <!-- Product Details Section -->
+        <StackPane style="-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+            <padding>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </padding>
+            <children>
+                <VBox spacing="15.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT">
+                            <children>
+                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6c5ce7" height="5.0" width="40.0" />
+                                <Label style="-fx-text-fill: #4834d4; -fx-font-weight: bold; -fx-padding: 0 0 0 10;" text="Détails du produit">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+
+                        <GridPane hgap="15.0" vgap="15.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <VBox spacing="8.0" GridPane.columnIndex="0">
+                                    <children>
+                                        <Label style="-fx-text-fill: #636e72; -fx-font-weight: bold;" text="Référence">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="referenceField" prefHeight="35.0" style="-fx-background-radius: 4; -fx-border-color: #e0e0e0; -fx-border-radius: 4;" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="8.0" GridPane.columnIndex="1">
+                                    <children>
+                                        <Label style="-fx-text-fill: #636e72; -fx-font-weight: bold;" text="Désignation">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="designationField" prefHeight="35.0" style="-fx-background-radius: 4; -fx-border-color: #e0e0e0; -fx-border-radius: 4;" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="8.0" GridPane.columnIndex="2">
+                                    <children>
+                                        <Label style="-fx-text-fill: #636e72; -fx-font-weight: bold;" text="Type">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <ComboBox fx:id="typeComboBox" prefHeight="35.0" style="-fx-background-radius: 4;" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="8.0" GridPane.columnIndex="3">
+                                    <children>
+                                        <Label style="-fx-text-fill: #636e72; -fx-font-weight: bold;" text="Catégorie">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <ComboBox fx:id="categorieComboBox" prefHeight="35.0" style="-fx-background-radius: 4;" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </GridPane>
+
+                        <GridPane hgap="15.0" vgap="15.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <VBox spacing="8.0" GridPane.columnIndex="0">
+                                    <children>
+                                        <Label style="-fx-text-fill: #636e72; -fx-font-weight: bold;" text="Quantité">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="quantiteField" prefHeight="35.0" style="-fx-background-radius: 4; -fx-border-color: #e0e0e0; -fx-border-radius: 4;" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="8.0" GridPane.columnIndex="1">
+                                    <children>
+                                        <Label style="-fx-text-fill: #636e72; -fx-font-weight: bold;" text="Stock Minimal">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="stockMinimalField" prefHeight="35.0" style="-fx-background-radius: 4; -fx-border-color: #e0e0e0; -fx-border-radius: 4;" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="8.0" GridPane.columnIndex="2">
+                                    <children>
+                                        <Label style="-fx-text-fill: #636e72; -fx-font-weight: bold;" text="Date de Péremption">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <DatePicker fx:id="datePeremptionPicker" prefHeight="35.0" style="-fx-background-radius: 4;" />
+                                    </children>
+                                </VBox>
+                                <VBox alignment="BOTTOM_LEFT" spacing="8.0" GridPane.columnIndex="3">
+                                    <children>
+                                        <CheckBox fx:id="critiqueCheckBox" mnemonicParsing="false" style="-fx-text-fill: #e84393; -fx-font-weight: bold;" text="Produit Critique">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </CheckBox>
+                                    </children>
+                                    <padding>
+                                        <Insets top="25.0" />
+                                    </padding>
+                                </VBox>
+                            </children>
+                        </GridPane>
+
+                        <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#handleAjouter" prefHeight="35.0" style="-fx-background-color: #00b894; -fx-text-fill: white; -fx-background-radius: 4;" text="Ajouter">
+                                    <font>
+                                        <Font size="12.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="7.0" left="15.0" right="15.0" top="7.0" />
+                                    </padding>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#handleModifier" prefHeight="35.0" style="-fx-background-color: #0984e3; -fx-text-fill: white; -fx-background-radius: 4;" text="Modifier">
+                                    <font>
+                                        <Font size="12.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="7.0" left="15.0" right="15.0" top="7.0" />
+                                    </padding>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#handleSupprimer" prefHeight="35.0" style="-fx-background-color: #e84393; -fx-text-fill: white; -fx-background-radius: 4;" text="Supprimer">
+                                    <font>
+                                        <Font size="12.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="7.0" left="15.0" right="15.0" top="7.0" />
+                                    </padding>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#handleExportPDF" prefHeight="35.0" style="-fx-background-color: #6c5ce7; -fx-text-fill: white; -fx-background-radius: 4;" text="Exporter PDF">
+                                    <font>
+                                        <Font size="12.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="7.0" left="15.0" right="15.0" top="7.0" />
+                                    </padding>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </StackPane>
+    </children>
+</VBox>
