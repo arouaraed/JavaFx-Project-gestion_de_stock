@@ -6,6 +6,13 @@ Application JavaFX pour la gestion de stock et d'inventaire des établissements 
 
 Système développé pour gérer efficacement l'inventaire universitaire : équipements de laboratoire, fournitures administratives, matériel informatique et ressources pédagogiques.
 
+## 🎥 Démonstration vidéo
+
+[![Voir la démonstration](https://img.youtube.com/vi/qRg6_Rc_biI/0.jpg)](https://www.youtube.com/watch?v=qRg6_Rc_biI)
+
+👉 **[Regarder la vidéo sur YouTube](https://www.youtube.com/watch?v=qRg6_Rc_biI)**  
+Démonstration complète de l'application JavaFX de gestion de stock développée pour les établissements universitaires : fonctionnalités principales, interface et flux de travail.
+
 ## ✨ Fonctionnalités
 
 - 📋 **Gestion des produits** - Ajout, modification, alertes de stock
@@ -17,7 +24,11 @@ Système développé pour gérer efficacement l'inventaire universitaire : équi
 
 ## 🛠️ Technologies
 
-- **Java** | **JavaFX ** | **SQLite** | **Maven** | **Apache PDFBox**
+- **Java**
+- **JavaFX**
+- **SQLite**
+- **Maven**
+- **Apache PDFBox**
 
 ## 🚀 Installation
 
@@ -25,17 +36,3 @@ Système développé pour gérer efficacement l'inventaire universitaire : équi
 git clone https://github.com/[username]/projet-gestion-stock.git
 cd projet-gestion-stock/gestion
 mvn javafx:run
-```
-
-**Prérequis :** JDK 17+, Maven 3.6+
-
-## 🎓 Contexte universitaire
-
-Optimise la gestion des stocks pour :
-- Laboratoires de recherche
-- Services administratifs  
-- Services informatiques
-- Maintenance et bibliothèques
-
-
-</div>
