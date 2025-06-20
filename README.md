@@ -17,7 +17,7 @@ Système développé pour gérer efficacement l'inventaire universitaire : équi
 
 ## 🛠️ Technologies
 
-- **Java+** | **JavaFX 17.0.6** | **SQLite** | **Maven** | **Apache PDFBox**
+- **Java** | **JavaFX ** | **SQLite** | **Maven** | **Apache PDFBox**
 
 ## 🚀 Installation
 
@@ -37,15 +37,5 @@ Optimise la gestion des stocks pour :
 - Services informatiques
 - Maintenance et bibliothèques
 
-## 📞 Contact
-
-📧 [votre-email@universite.edu] | 📋 [GitHub Issues](https://github.com/[username]/projet-gestion-stock/issues)
-
----
-<div align="center">
-
-**Développé pour la communauté universitaire** 🏛️
-
-[⭐ Star ce projet](https://github.com/[username]/projet-gestion-stock)
 
 </div>
