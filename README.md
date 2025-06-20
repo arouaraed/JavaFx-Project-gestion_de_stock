@@ -1,4 +1,4 @@
-# 📦 Système de Gestion de Stock Universitaire
+# 📦 Système de Gestion de Stock pour mon universite
 
 Application JavaFX pour la gestion de stock et d'inventaire des établissements universitaires.
 
@@ -17,7 +17,7 @@ Système développé pour gérer efficacement l'inventaire universitaire : équi
 
 ## 🛠️ Technologies
 
-- **Java 17+** | **JavaFX 17.0.6** | **SQLite** | **Maven** | **Apache PDFBox**
+- **Java+** | **JavaFX 17.0.6** | **SQLite** | **Maven** | **Apache PDFBox**
 
 ## 🚀 Installation
 
