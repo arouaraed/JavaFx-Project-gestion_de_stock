@@ -36,3 +36,4 @@ Démonstration complète de l'application JavaFX de gestion de stock développé
 git clone https://github.com/[username]/projet-gestion-stock.git
 cd projet-gestion-stock/gestion
 mvn javafx:run
+ 
